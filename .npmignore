@@ -1,0 +1,79 @@
+# Source files
+src/
+*.ts
+*.tsx
+!*.d.ts
+
+# Tests
+__tests__/
+*.test.ts
+*.test.tsx
+*.spec.ts
+*.spec.tsx
+test/
+tests/
+
+# Development files
+.gitignore
+.prettierrc
+.eslintrc
+.eslintignore
+tsconfig.json
+tsconfig.node.json
+jest.config.js
+
+# Documentation
+*.md
+!README.md
+!LICENSE
+docs/
+
+# CI/CD
+.github/
+.gitlab-ci.yml
+.travis.yml
+circleci/
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+logs/
+*.log
+
+# Temporary
+tmp/
+temp/
+*.tmp
+
+# Backup
+*.bak
+*.backup
+old-design-bkp/
+.aivaruna-backup/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build artifacts (we want to include dist/)
+# dist/ is intentionally NOT ignored
+
+# Node
+node_modules/
+
+# Examples
+examples/
+demo/
+demo-app/
+
+# Scripts (include only essential ones)
+scripts/github-init.sh
+scripts/github-init.bat
+scripts/publish-npm.js
+
+# Workflows
+workflows/

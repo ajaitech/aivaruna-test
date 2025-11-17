@@ -1,7 +1,90 @@
 {
   "name": "@aivibe/aivaruna",
   "version": "2.0.0",
-  "description": "AIVARUNA - Premium Paper-Themed Design System",
+  "description": "AIVARUNA - Premium Paper-Themed Design System for TypeScript Applications. A comprehensive dual-themed UI package featuring handwritten fonts, GSAP-style animations, paper textures, and complete theme inversion between light and dark modes. Includes design configurator with 33 pre-configured templates, custom font support, and automatic backup system.",
   "main": "dist/index.js",
-  "author": "ARAVIND JAYAMOHAN"
+  "types": "dist/index.d.ts",
+  "module": "dist/index.esm.js",
+  "bin": {
+    "aivaruna": "./bin/aivaruna.js"
+  },
+  "files": [
+    "dist",
+    "styles",
+    "bin",
+    "scripts",
+    "contexts",
+    "design-configurator.html",
+    "README.md",
+    "LICENSE",
+    ".github"
+  ],
+  "scripts": {
+    "build": "npm run build:types && npm run build:esm && npm run build:cjs",
+    "build:types": "tsc --emitDeclarationOnly --declaration --declarationDir dist",
+    "build:esm": "esbuild src/index.ts --bundle --format=esm --outfile=dist/index.esm.js --external:react --external:react-dom",
+    "build:cjs": "esbuild src/index.ts --bundle --format=cjs --outfile=dist/index.js --external:react --external:react-dom",
+    "prepublishOnly": "npm run build",
+    "install": "node scripts/install.js",
+    "postinstall": "node scripts/post-install.js || true",
+    "aivaruna:config": "node bin/aivaruna.js config",
+    "aivaruna:backup": "node scripts/backup-design.js",
+    "aivaruna:restore": "node scripts/restore-design.js"
+  },
+  "keywords": [
+    "react",
+    "typescript",
+    "ui",
+    "design-system",
+    "theme",
+    "paper-theme",
+    "dark-mode",
+    "light-mode",
+    "components",
+    "tailwind",
+    "animations",
+    "aivaruna",
+    "aivibe"
+  ],
+  "author": {
+    "name": "ARAVIND JAYAMOHAN",
+    "email": "aravind@aivibe.in",
+    "url": "https://aivibe.in"
+  },
+  "license": "SEE LICENSE IN LICENSE",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ajaitech/aivaruna"
+  },
+  "bugs": {
+    "url": "https://github.com/ajaitech/aivaruna/issues"
+  },
+  "homepage": "https://aivaruna.aivibe.in",
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
+  },
+  "dependencies": {
+    "lucide-react": "^0.469.0",
+    "motion": "^12.0.0",
+    "sonner": "^2.0.3"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.17",
+    "@types/react-dom": "^18.3.5",
+    "esbuild": "^0.24.2",
+    "typescript": "^5.7.3"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "funding": {
+    "type": "individual",
+    "url": "https://aivibe.in/support"
+  }
 }
